@@ -1,0 +1,9 @@
+<% layout('layout') %>
+<h1><%= item.name %></h1>
+<p><strong>Description:</strong> <%= item.description %></p>
+<p><strong>Price:</strong> $<%= item.price %></p>
+<p><strong>Stock:</strong> <%= item.stock_quantity %></p>
+<p><strong>Category ID:</strong> <%= item.category_id %></p>
+
+<a href="/items/<%= item.id %>/edit" class="btn btn-warning">Edit</a>
+<a href="/items" class="btn btn-secondary">Back to Items</a>

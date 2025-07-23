@@ -1,0 +1,19 @@
+<% layout('layout') %>
+<h1><%= category.name %></h1>
+<p><%= category.description %></p>
+
+<a href="/categories/<%= category.id %>/edit" class="btn btn-warning btn-sm mb-3">Edit</a>
+
+<h3>Items in this category:</h3>
+<% if (items.length === 0) { %>
+  <p>No items found.</p>
+<% } else { %>
+  <ul class="list-group">
+    <% items.forEach(item => { %>
+      <li class="list-group-item">
+        <a href="/items/<%= item.id %>"><%= item.name %></a>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+<a href="/items/new" class="btn btn-primary mt-3">Add Item</a>

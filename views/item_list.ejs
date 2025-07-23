@@ -1,0 +1,15 @@
+<% layout('layout') %>
+<h1>All Items</h1>
+<a href="/items/new" class="btn btn-primary mb-3">Create New Item</a>
+
+<ul class="list-group">
+  <% items.forEach(item => { %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <a href="/items/<%= item.id %>"><%= item.name %> (<%= item.category_name %>)</a>
+      <form action="/items/<%= item.id %>/delete" method="POST" class="d-flex">
+        <input type="password" name="admin_password" placeholder="Admin password" class="form-control me-2" required />
+        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
